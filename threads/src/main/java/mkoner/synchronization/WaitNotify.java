@@ -53,3 +53,15 @@ class Printer{
 
     }
 }
+
+/*
+wait(): it makes the current executing thread go to waiting state
+thus releasing the lock on the synchronized object.
+Must be called in the context of synchronize(block or method)
+
+notify(): wakes up one of the waiting thread on the same obj lock(if many are waiting
+one of them is chosen arbitrary). It does not release the lock immediately it releases
+it only after exiting the synchronized block or method
+
+notifyAll(): wakes up all the threads waiting on the current obj
+ */
