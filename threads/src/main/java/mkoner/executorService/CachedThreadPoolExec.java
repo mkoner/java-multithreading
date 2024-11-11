@@ -29,5 +29,4 @@ The task q accepts only one task, if a task is added to q,
 new one is created to execute the task
 - if a thread completes its tasks, it checks if a new task is in the q and then executes
  it, if not it remains idle for 60s max before being killed.
-
- */
+*/
