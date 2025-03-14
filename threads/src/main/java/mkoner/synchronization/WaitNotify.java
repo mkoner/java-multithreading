@@ -64,4 +64,4 @@ one of them is chosen arbitrary). It does not release the lock immediately it re
 it only after exiting the synchronized block or method
 
 notifyAll(): wakes up all the threads waiting on the current obj
- */
+*/

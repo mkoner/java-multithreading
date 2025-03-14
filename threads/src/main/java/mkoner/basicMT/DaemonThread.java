@@ -8,7 +8,7 @@ public class DaemonThread {
             }
         });
         Thread userThread = new Thread(()->{
-            for(int i=0; i<5; i++){
+            for(int i=0; i<500; i++){
                 System.out.println("User thread");
             }
         });
