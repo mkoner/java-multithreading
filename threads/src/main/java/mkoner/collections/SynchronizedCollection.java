@@ -30,15 +30,16 @@ public class SynchronizedCollection {
 }
 
 /*
+
 In Java, synchronized collections are thread-safe versions of standard collections provided by
 utility methods in the Collections class, such as:
-
-Collections.synchronizedList(List<T> list)
-Collections.synchronizedMap(Map<K, V> map)
-Collections.synchronizedSet(Set<T> set)
+    Collections.synchronizedList(List<T> list)
+    Collections.synchronizedMap(Map<K, V> map)
+    Collections.synchronizedSet(Set<T> set)
 These methods wrap the given collection and synchronize access to it, ensuring that only one
 thread can modify it at a time.
 
 Cons:
 Low performance due to single lock(coarse grained) used for the entire resource
- */
+
+*/
