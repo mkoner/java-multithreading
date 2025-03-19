@@ -35,3 +35,32 @@ java.util.concurrent package.
 #### Cons of CountDownLatch
 - Cannot Be Reused: Once the count reaches zero, it cannot be reset; a new CountDownLatch must be created if needed.
 - Fixed Number of Participants: You must know in advance how many threads need to call countDown()
+
+
+### BlockingQueue
+
+It's a thread-safe queue where the operation to insert an element can wait
+for space to become available and the retrieve operation can wait for an element to be added when the queue is empty.
+<br>
+Impl classes: ArrayBlockingQueue, DelayQueue (elements can only be consumed after a certain delay), 
+LinkedBlockingDeque, LinkedBlockingQueue, LinkedTransferQueue, PriorityBlockingQueue, 
+SynchronousQueue(0 capacity, after inserting an element  we can only do another insertion when that element is consumed)
+<br>
+#### Operations
+
+add(e), remove(), element() -> throw exception<br>
+offer(e), poll(), peek() -> return special values (boolean for offer(), null is empty for poll() and peek())<br>
+put(e), take() -> blocking ops<br>
+offer(e, time, unit), poll(time, unit) -> times out<br>
+
+#### Sub interfaces of BlockingQueue:
+- BlockingDeque<E>:  double-ended queue that supports blocking operations, Blocks if full but doesn’t wait for consumption,
+insertion at both ends (putFirst(), putLast()), consume from both ends (takeFirst(), takeLast())
+<br> Concrete impl LinkedBlockingDeque
+- TransferQueue<E>:  allows producers to wait until consumers retrieve elements.
+  Methods: 
+  * transfer(E e) → Blocks until a consumer receives the element.
+  * tryTransfer(E e) → Returns true if an element is immediately transferred; otherwise, false.
+  * tryTransfer(E e, long timeout, TimeUnit unit) → Waits for a consumer for the given time.
+  * hasWaitingConsumer() → Checks if any consumer is waiting.
+<br> Concrete impl LinkedTransferQueue<E>
