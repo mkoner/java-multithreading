@@ -64,3 +64,16 @@ insertion at both ends (putFirst(), putLast()), consume from both ends (takeFirs
   * tryTransfer(E e, long timeout, TimeUnit unit) → Waits for a consumer for the given time.
   * hasWaitingConsumer() → Checks if any consumer is waiting.
 <br> Concrete impl LinkedTransferQueue<E>
+  
+### ConcurrentMap<K, V>
+is a thread-safe variant of Map<K, V> designed for concurrent access without requiring explicit 
+synchronization. It belongs to the java.util.concurrent package and provides atomic operations that 
+allow multiple threads to modify the map concurrently without corrupting the data.
+<br>
+Most used Implementing Classes: ConcurrentHashMap 
+#### Key Features:
+- Thread-safe: Multiple threads can access it concurrently.
+- Lock-free Reads: Read operations (get(), containsKey()) do not require locks.
+- Segmented Locking: Uses a finer-grained locking mechanism (on buckets instead of the whole map).
+- Atomic Operations: Supports methods like putIfAbsent(), compute(), and replace().
+
